@@ -3,9 +3,10 @@ contacts = {"Joe Smith" => {}}
 field = [:email, :address, :phone]
 
 contacts.each do |name, hash|
-    contact_data.each do |field|
-        hash[field] = contact_data.shift
-    end
+  field.each do |field|
+    hash[field] = contact_data.shift
+  end
 end
+
 
 p contacts
