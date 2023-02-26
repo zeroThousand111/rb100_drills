@@ -74,6 +74,9 @@ Step-by-step process (plaintext or pseudocode):
   - Print or return the contacts hash to confirm the method has populated the hash the way we wanted it to
 ________________________________________________________________________________
 Time to code!
+
+N.B. The syntax for adding a new key/value pair to a hash is: hash_name[:key] = value
+
 =end
 
 # initial information
