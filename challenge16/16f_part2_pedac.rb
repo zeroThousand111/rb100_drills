@@ -86,15 +86,18 @@ Step-by-step process (plaintext or pseudocode):
   # The logical process by which you intend to tackle the problem at hand
 
   - Create a list (an array) of the type of contact data [:email, :address, :phone] called fields
-  - Iterate over the fields with a method (e.g. each) to create a key/value pair for each contact data type with each item from the contact_data array
+  - Iterate over the fields with a method (e.g. each) to create a key/value pair for each contact data type with each item from the contact_data array from INSIDE EACH NESTED ARRAY
+    - 
     - The output of this method will form the keys and values of every named contact in the contacts hash
-    - The output will be formatted {:field1 => "contact_data item1", :field2 => "contact_data item2", etc.}
+    - The output will be formatted {:field1 => "contact_data item1", :field2 => "contact_data item2", etc.} for every named contact
   - Iterate over the name keys in the outer contact hash to make sure the above step happens for every contact
-   - This is simple, because the challenge only gives us one contact ("Joe Smith") in the contacts hash
-   - But it must happen once for the algorithm to work
+   - This must happen for every contact in the contacts hash (i.e. "Joe Smith" and "Sally Johnson")
   - Print or return the contacts hash to confirm the method has populated the hash the way we wanted it to
 ________________________________________________________________________________
 Time to code!
+
+N.B. The syntax to add key/value pairs to a hash is: hash_name[:key] = value
+
 =end
 
 # initial information
