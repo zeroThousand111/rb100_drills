@@ -1,0 +1,41 @@
+contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]
+contacts = {"Joe Smith" => {}}
+
+Challenge: In exercise 11, we manually set the contacts hash values one by one. Now, programmatically loop or iterate over the contacts hash from exercise 11, and populate the associated data from the contact_data array. Hint: you will probably need to iterate over ([:email, :address, :phone]), and some helpful methods might be the Array shift and first methods.
+
+
+Problem:
+  Input:
+    - An array with contact information - "contact_data"
+    - A hash of contacts. This hash contains one key/value pair consisting of a person's name paired with an empty hash -  "contacts"
+  Output:
+    - A hash ("contacts") populated with one key/value pair: the key is a person's name and is associated with a hash value.
+      - Inside of the hash value are 3 key/value pairs made of the items in the "contact_data" array and their associated keys (labels) as symbols. 
+
+Rules: 
+  Explicit:
+    - Must iterate over the "contacts" hash in order to set its values, rather than manually adding values
+    - The "contacts" hash must be populated with values from the "contact_data" array
+    - Will likely need to iterate over an array consisting of 3 elements - [:email, :address, :phone]
+    - May use Array methods such as #shift and #first
+    - Bonus: The code must work with multiple entries in the "contacts" hash
+  Implicit:
+    - Must create an array with 3 elements to serve as keys for the "contacts" first entry's values hash - [:email, :address, :phone]
+    - Hash values should match indexes for labels (:email, :address, :phone) and "contact_data" array so that data is displayed with the correct association. 
+
+Test Cases:
+Output:
+
+contacts = {"Joe Smith" => {email: "joe@email.com", address: "123 Main st.", phone: "555-123-4567"}}
+
+Data Structure: 
+  - Output will be the "contacts" hash
+  - Also need an array for what will become "contact_data" labels ("labels")
+
+Algorithm:
+  - Create an array of three elements ("labels") - :email, :address, :phone. These values will later serve as the keys for the each contact entry's value hash.
+    - (Note: Not sure the best way to refer to that hash valu - {"Joe Smith" => {}}.. subhash?)
+  - Iterate over the provided "contacts" hash
+    - Iterate over the "labels" array
+    - Populate the value hash with keys from the "labels" array and values from the "contact_data" array
+  - Print the "contacts" hash to check value
