@@ -17,8 +17,8 @@ Input:
   contacts = {"Joe Smith" => {}}
   field = {:email, :address, :phone}
   
-  For the sake of clarity, I will the call the hash value paired with the contact "name" key, contact_info.
-  So the input is contacts = {"name" => "contact_info"}, where "contact_info" is itself a hash made up of three key-value pairs {:email => "something", :address => "something", :phone => "something"}
+  For the sake of clarity, I will the call the hash value paired with the contact "name" key, contact_info_hash.
+  So the input is contacts = {"name" => {contact_info_hash}}, where contact_info_hash is itself a hash made up of three key-value pairs {:email => "something", :address => "something", :phone => "something"}
  
 Output:
   # What is the form of the data you want the program to either return or print?
@@ -53,12 +53,12 @@ Data manipulation strategy:
   - contacts is a hash of key-value pairs 
     - {"name" => {contact_info}}
     - the key is a string, the value is a hash
-  - contact_info is a hash of key-value pairs 
+  - contact_info_hash is a hash of key-value pairs 
     - {:field => "contact_data item"}
     - the keys are symbols, the values are strings
     - Each :field key is currently an item in an array called fields
-    - Each :field key symbol will need to be copied into contact_info hash as a key
-    - Each contact_data string item need to be copied into contact_info as a value
+    - Each :field key symbol will need to be copied into contact_info_hash as a key
+    - Each contact_data string item need to be copied into contact_info_hash as a value
   
 ________________________________________________________________________________
 *****Algorithm*****
@@ -66,8 +66,8 @@ ________________________________________________________________________________
 Step-by-step process (plaintext or pseudocode):
   # The logical process by which you intend to tackle the problem at hand
   1. Declare the initial starting information
-  2. Create an array of contact_info keys i.e. fields = {:email, :address, :phone}
-  3. Iterate over each "name"-{contact_info} pair in contacts
+  2. Create an array of contact_info_hash keys i.e. fields = {:email, :address, :phone}
+  3. Iterate over each "name"-{contact_info_hash} pair in contacts
     4. Within each of the above (but there is just one) iterate over each field-contact_data pair
   4.Output contacts to show that it has been populated with the correct information
 ________________________________________________________________________________
@@ -77,6 +77,8 @@ N.B. The syntax to enter new information into a hash is hash_name[:key] = value
 
 =end
 
+require "pry"
+
 # Declare initial arrays
 contact_data = ["joe@email.com", "123 Main st.", "555-123-4567"]
 contacts = {"Joe Smith" => {}}
@@ -85,9 +87,10 @@ contacts = {"Joe Smith" => {}}
 fields = [:email, :address, :phone]
 
 # define a method to populate each key-value pair in contact_info
-contacts.each do |name, contact_info|               # the parameters are the key-value pairs of contacts hash
+contacts.each do |name, contact_info_hash |               # the parameters are the key-value pairs of contacts hash
     fields.each do |field|                          # the parameter is each field of fields array
-        contact_info[field] = contact_data.shift    # the shift method progressively returns the first item in the array and then removes it
+        contact_info_hash[field] = contact_data.shift    # the shift method progressively returns the first item in the array and then removes it
+        binding.pry
     end
 end
 
