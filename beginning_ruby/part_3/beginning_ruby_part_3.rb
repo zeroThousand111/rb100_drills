@@ -1,5 +1,5 @@
 require "pry"
-array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+# array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 # puts every item in the array using a loop
 # index = 4
@@ -40,10 +40,21 @@ array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 #     return sum if index == array.size
 #     binding.pry
 # end
-# p sum  
 
-sum = array.sum
 
-p sum
-# p new_array
-p array
+# sum = array.sum
+
+# p sum
+# # p new_array
+# p array
+
+hash = {a: 1, b: 2, c: 3, d: 4}
+
+hash[:e] = 5
+
+
+
+# use each method to iterate over the hash and print out the keys and values
+# hash.each do | key, value|
+#     puts "The key #{key} matches the value #{value}!"
+# end
