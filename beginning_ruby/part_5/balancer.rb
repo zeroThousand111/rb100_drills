@@ -1,12 +1,17 @@
 def balancer(string)
-    open_count = string.count"("
-    close_count = string.count")"
-    p open_count == close_count
+    
+    string.count("(") == string.count(")")
 end
 
-balancer("hi")      # true
-balancer("(hi")     # false
-balancer("(hi)")    # true
+def brackets(string)
+    string.delete!"^()"
+    p string.start_with?"("
+end
 
-# bonus
-# balancer(")hi(")
+p balancer("hi")      # true
+p balancer("(hi")     # false
+p balancer("(hi)")    # true
+
+# # bonus
+p balancer(")hi(")
+# brackets(")hi(")
